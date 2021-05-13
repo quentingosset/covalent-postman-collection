@@ -3333,7 +3333,918 @@
 		},
 		{
 			"name": "Pricing Endpoints",
-			"item": []
+			"item": [
+				{
+					"name": "Get historical prices by address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pricing/historical_by_address/{{chain_id}}/{{quote_currency}}/{{contract_address}}/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pricing",
+								"historical_by_address",
+								"{{chain_id}}",
+								"{{quote_currency}}",
+								"{{contract_address}}",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "The start day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "The end day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "prices-at-asc",
+									"value": null,
+									"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+									"disabled": true
+								},
+								{
+									"key": "page-number",
+									"value": null,
+									"description": "The specific page to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "page-size",
+									"value": null,
+									"description": "The number of results per page.",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "If format=csv, return a flat CSV instead of JSON responses.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get historical prices for a contract_address in a particular chain_Id and quote_currency. Can pass to and from to define a range, by default if they are omitted, it returns today's price."
+					},
+					"response": [
+						{
+							"name": "Get historical prices by address",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/pricing/historical_by_address/{{chain_id}}/{{quote_currency}}/{{contract_address}}/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"pricing",
+										"historical_by_address",
+										"{{chain_id}}",
+										"{{quote_currency}}",
+										"{{contract_address}}",
+										""
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": null,
+											"description": "The start day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": null,
+											"description": "The end day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "prices-at-asc",
+											"value": null,
+											"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+											"disabled": true
+										},
+										{
+											"key": "page-number",
+											"value": null,
+											"description": "The specific page to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "page-size",
+											"value": null,
+											"description": "The number of results per page.",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"description": "If format=csv, return a flat CSV instead of JSON responses.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 14:01:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "Scout/v20210512185305 (built on 2021-05-13T01:53:05Z)"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"contract_decimals\": 18,\n        \"contract_name\": \"Uniswap\",\n        \"contract_ticker_symbol\": \"UNI\",\n        \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n        \"supports_erc\": [\n            \"erc20\"\n        ],\n        \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n        \"update_at\": \"2021-05-13T14:01:03.425156102Z\",\n        \"quote_currency\": \"USD\",\n        \"prices\": [\n            {\n                \"contract_metadata\": {\n                    \"contract_decimals\": 18,\n                    \"contract_name\": \"Uniswap\",\n                    \"contract_ticker_symbol\": \"UNI\",\n                    \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n                    \"supports_erc\": [\n                        \"erc20\"\n                    ],\n                    \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n                    \"decimalsDivisor\": \"1000000000000000000\"\n                },\n                \"date\": \"2021-05-13\",\n                \"price\": 38.961174\n            }\n        ],\n        \"decimalsDivisor\": \"1000000000000000000\"\n    },\n    \"error\": false,\n    \"error_message\": null,\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get historical prices by addresses v2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pricing/historical_by_addresses_v2/{{chain_id}}/{{quote_currency}}/{{contract_addresses}}/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pricing",
+								"historical_by_addresses_v2",
+								"{{chain_id}}",
+								"{{quote_currency}}",
+								"{{contract_addresses}}",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "The start day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "The end day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "prices-at-asc",
+									"value": null,
+									"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+									"disabled": true
+								},
+								{
+									"key": "page-number",
+									"value": null,
+									"description": "The specific page to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "page-size",
+									"value": null,
+									"description": "The number of results per page.",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "If format=csv, return a flat CSV instead of JSON responses.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get historical prices for a contract_address, or a comma-separated group of contract_addresses in a particular chain_id and quote_currency. Can pass to and from to define a range, by default if they are omitted, it returns today's price."
+					},
+					"response": [
+						{
+							"name": "Get historical prices by addresses v2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/pricing/historical_by_addresses_v2/{{chain_id}}/{{quote_currency}}/{{contract_addresses}}/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"pricing",
+										"historical_by_addresses_v2",
+										"{{chain_id}}",
+										"{{quote_currency}}",
+										"{{contract_addresses}}",
+										""
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": null,
+											"description": "The start day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": null,
+											"description": "The end day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "prices-at-asc",
+											"value": null,
+											"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+											"disabled": true
+										},
+										{
+											"key": "page-number",
+											"value": null,
+											"description": "The specific page to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "page-size",
+											"value": null,
+											"description": "The number of results per page.",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"description": "If format=csv, return a flat CSV instead of JSON responses.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 14:13:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "Scout/v20210512185305 (built on 2021-05-13T01:53:05Z)"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"contract_decimals\": 18,\n            \"contract_name\": \"Uniswap\",\n            \"contract_ticker_symbol\": \"UNI\",\n            \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n            \"supports_erc\": [\n                \"erc20\"\n            ],\n            \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n            \"update_at\": \"2021-05-13T14:13:49.716928678Z\",\n            \"quote_currency\": \"USD\",\n            \"prices\": [\n                {\n                    \"contract_metadata\": {\n                        \"contract_decimals\": 18,\n                        \"contract_name\": \"Uniswap\",\n                        \"contract_ticker_symbol\": \"UNI\",\n                        \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n                        \"supports_erc\": [\n                            \"erc20\"\n                        ],\n                        \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n                        \"decimalsDivisor\": \"1000000000000000000\"\n                    },\n                    \"date\": \"2021-05-13\",\n                    \"price\": 38.811707\n                }\n            ],\n            \"decimalsDivisor\": \"1000000000000000000\"\n        },\n        {\n            \"contract_decimals\": 6,\n            \"contract_name\": \"Tether USD\",\n            \"contract_ticker_symbol\": \"USDT\",\n            \"contract_address\": \"0xdac17f958d2ee523a2206206994597c13d831ec7\",\n            \"supports_erc\": [\n                \"erc20\"\n            ],\n            \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdac17f958d2ee523a2206206994597c13d831ec7.png\",\n            \"update_at\": \"2021-05-13T14:13:49.806360786Z\",\n            \"quote_currency\": \"USD\",\n            \"prices\": [\n                {\n                    \"contract_metadata\": {\n                        \"contract_decimals\": 6,\n                        \"contract_name\": \"Tether USD\",\n                        \"contract_ticker_symbol\": \"USDT\",\n                        \"contract_address\": \"0xdac17f958d2ee523a2206206994597c13d831ec7\",\n                        \"supports_erc\": [\n                            \"erc20\"\n                        ],\n                        \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdac17f958d2ee523a2206206994597c13d831ec7.png\",\n                        \"decimalsDivisor\": \"1000000\"\n                    },\n                    \"date\": \"2021-05-13\",\n                    \"price\": 1.0058173\n                }\n            ],\n            \"decimalsDivisor\": \"1000000\"\n        }\n    ],\n    \"error\": false,\n    \"error_message\": null,\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get historical prices by addresses [OLD]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pricing/historical_by_addresses_v2/{{chain_id}}/{{quote_currency}}/{{contract_addresses}}/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pricing",
+								"historical_by_addresses_v2",
+								"{{chain_id}}",
+								"{{quote_currency}}",
+								"{{contract_addresses}}",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "The start day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "The end day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "prices-at-asc",
+									"value": null,
+									"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+									"disabled": true
+								},
+								{
+									"key": "page-number",
+									"value": null,
+									"description": "The specific page to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "page-size",
+									"value": null,
+									"description": "The number of results per page.",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "If format=csv, return a flat CSV instead of JSON responses.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get historical prices for a contract_address, or a comma-separated group of contract_addresses in a particular chain_id and quote_currency. Can pass to and from to define a range, by default if they are omitted, it returns today's price."
+					},
+					"response": [
+						{
+							"name": "Get historical prices by addresses [OLD]",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/pricing/historical_by_addresses_v2/{{chain_id}}/{{quote_currency}}/{{contract_addresses}}/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"pricing",
+										"historical_by_addresses_v2",
+										"{{chain_id}}",
+										"{{quote_currency}}",
+										"{{contract_addresses}}",
+										""
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": null,
+											"description": "The start day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": null,
+											"description": "The end day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "prices-at-asc",
+											"value": null,
+											"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+											"disabled": true
+										},
+										{
+											"key": "page-number",
+											"value": null,
+											"description": "The specific page to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "page-size",
+											"value": null,
+											"description": "The number of results per page.",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"description": "If format=csv, return a flat CSV instead of JSON responses.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 14:18:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "408"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "Scout/v20210512185305 (built on 2021-05-13T01:53:05Z)"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"contract_decimals\": 18,\n            \"contract_name\": \"Uniswap\",\n            \"contract_ticker_symbol\": \"UNI\",\n            \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n            \"supports_erc\": [\n                \"erc20\"\n            ],\n            \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n            \"update_at\": \"2021-05-13T14:18:31.554524774Z\",\n            \"quote_currency\": \"USD\",\n            \"prices\": [\n                {\n                    \"contract_metadata\": {\n                        \"contract_decimals\": 18,\n                        \"contract_name\": \"Uniswap\",\n                        \"contract_ticker_symbol\": \"UNI\",\n                        \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n                        \"supports_erc\": [\n                            \"erc20\"\n                        ],\n                        \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n                        \"decimalsDivisor\": \"1000000000000000000\"\n                    },\n                    \"date\": \"2021-05-13\",\n                    \"price\": 38.811707\n                }\n            ],\n            \"decimalsDivisor\": \"1000000000000000000\"\n        },\n        {\n            \"contract_decimals\": 6,\n            \"contract_name\": \"Tether USD\",\n            \"contract_ticker_symbol\": \"USDT\",\n            \"contract_address\": \"0xdac17f958d2ee523a2206206994597c13d831ec7\",\n            \"supports_erc\": [\n                \"erc20\"\n            ],\n            \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdac17f958d2ee523a2206206994597c13d831ec7.png\",\n            \"update_at\": \"2021-05-13T14:18:31.555648729Z\",\n            \"quote_currency\": \"USD\",\n            \"prices\": [\n                {\n                    \"contract_metadata\": {\n                        \"contract_decimals\": 6,\n                        \"contract_name\": \"Tether USD\",\n                        \"contract_ticker_symbol\": \"USDT\",\n                        \"contract_address\": \"0xdac17f958d2ee523a2206206994597c13d831ec7\",\n                        \"supports_erc\": [\n                            \"erc20\"\n                        ],\n                        \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdac17f958d2ee523a2206206994597c13d831ec7.png\",\n                        \"decimalsDivisor\": \"1000000\"\n                    },\n                    \"date\": \"2021-05-13\",\n                    \"price\": 1.0058173\n                }\n            ],\n            \"decimalsDivisor\": \"1000000\"\n        }\n    ],\n    \"error\": false,\n    \"error_message\": null,\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get historical prices by ticker symbol",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pricing/historical/{{quote_currency}}/{{ticker_symbol}}/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pricing",
+								"historical",
+								"{{quote_currency}}",
+								"{{ticker_symbol}}",
+								""
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": null,
+									"description": "The start day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": null,
+									"description": "The end day of the historical price range. (YYYY-MM-DD)",
+									"disabled": true
+								},
+								{
+									"key": "prices-at-asc",
+									"value": null,
+									"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+									"disabled": true
+								},
+								{
+									"key": "page-number",
+									"value": null,
+									"description": "The specific page to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "page-size",
+									"value": null,
+									"description": "The number of results per page.",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "If format=csv, return a flat CSV instead of JSON responses.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get historical prices for a ticker_symbol in a particular quote_currency. Can pass to and from to define a range, by default if they are omitted, it returns today's price."
+					},
+					"response": [
+						{
+							"name": "Get historical prices by ticker symbol",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/pricing/historical/{{quote_currency}}/{{ticker_symbol}}/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"pricing",
+										"historical",
+										"{{quote_currency}}",
+										"{{ticker_symbol}}",
+										""
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": null,
+											"description": "The start day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "to",
+											"value": null,
+											"description": "The end day of the historical price range. (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "prices-at-asc",
+											"value": null,
+											"description": "Sort the prices in chronological ascending order. By default, it's set to false and returns prices in chronological descending order.",
+											"disabled": true
+										},
+										{
+											"key": "page-number",
+											"value": null,
+											"description": "The specific page to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "page-size",
+											"value": null,
+											"description": "The number of results per page.",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"description": "If format=csv, return a flat CSV instead of JSON responses.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 14:22:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "Scout/v20210512185305 (built on 2021-05-13T01:53:05Z)"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"contract_decimals\": 18,\n        \"contract_name\": \"Uniswap\",\n        \"contract_ticker_symbol\": \"UNI\",\n        \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n        \"supports_erc\": [\n            \"erc20\"\n        ],\n        \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n        \"update_at\": \"2021-05-13T14:22:38.110666767Z\",\n        \"quote_currency\": \"USD\",\n        \"prices\": [\n            {\n                \"contract_metadata\": {\n                    \"contract_decimals\": 18,\n                    \"contract_name\": \"Uniswap\",\n                    \"contract_ticker_symbol\": \"UNI\",\n                    \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n                    \"supports_erc\": [\n                        \"erc20\"\n                    ],\n                    \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n                    \"decimalsDivisor\": \"1000000000000000000\"\n                },\n                \"date\": \"2021-05-13\",\n                \"price\": 39.025406\n            }\n        ],\n        \"decimalsDivisor\": \"1000000000000000000\"\n    },\n    \"error\": false,\n    \"error_message\": null,\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get spot prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pricing/tickers/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pricing",
+								"tickers",
+								""
+							],
+							"query": [
+								{
+									"key": "tickers",
+									"value": null,
+									"description": "If tickers (a comma separated list of tickers is present), only return the spot prices for these tokens.",
+									"disabled": true
+								},
+								{
+									"key": "page-number",
+									"value": null,
+									"description": "The specific page to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "page-size",
+									"value": null,
+									"description": "The number of results per page.",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "If format=csv, return a flat CSV instead of JSON responses.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get spot prices and metadata for all tickers or a select group of tickers. Without tickers query param, it returns a paginated list of all tickers sorted by market cap."
+					},
+					"response": [
+						{
+							"name": "Get spot prices",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/pricing/tickers/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"pricing",
+										"tickers",
+										""
+									],
+									"query": [
+										{
+											"key": "tickers",
+											"value": null,
+											"description": "If tickers (a comma separated list of tickers is present), only return the spot prices for these tokens.",
+											"disabled": true
+										},
+										{
+											"key": "page-number",
+											"value": null,
+											"description": "The specific page to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "page-size",
+											"value": null,
+											"description": "The number of results per page.",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"description": "If format=csv, return a flat CSV instead of JSON responses.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 14:26:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6004"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "Scout/v20210512185305 (built on 2021-05-13T01:53:05Z)"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updated_at\": \"2021-05-13T14:26:04.701928892Z\",\n        \"items\": [\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Wrapped Ether\",\n                \"contract_ticker_symbol\": \"WETH\",\n                \"contract_address\": \"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png\",\n                \"quote_rate\": 3912.9727,\n                \"rank\": 2,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 6,\n                \"contract_name\": \"Tether USD\",\n                \"contract_ticker_symbol\": \"USDT\",\n                \"contract_address\": \"0xdac17f958d2ee523a2206206994597c13d831ec7\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdac17f958d2ee523a2206206994597c13d831ec7.png\",\n                \"quote_rate\": 1.0101446,\n                \"rank\": 6,\n                \"decimalsDivisor\": \"1000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Uniswap\",\n                \"contract_ticker_symbol\": \"UNI\",\n                \"contract_address\": \"0x1f9840a85d5af5bf1d1762f925bdaddc4201f984\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984.png\",\n                \"quote_rate\": 38.76538,\n                \"rank\": 11,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"ChainLink Token\",\n                \"contract_ticker_symbol\": \"LINK\",\n                \"contract_address\": \"0x514910771af9ca656af840dff83e8264ecf986ca\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x514910771af9ca656af840dff83e8264ecf986ca.png\",\n                \"quote_rate\": 44.4809,\n                \"rank\": 12,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 6,\n                \"contract_name\": \"USD Coin\",\n                \"contract_ticker_symbol\": \"USDC\",\n                \"contract_address\": \"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.png\",\n                \"quote_rate\": 1.0035424,\n                \"rank\": 13,\n                \"decimalsDivisor\": \"1000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"OKB\",\n                \"contract_ticker_symbol\": \"OKB\",\n                \"contract_address\": \"0x75231f58b43240c9718dd58b4967c5114342a86c\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x75231f58b43240c9718dd58b4967c5114342a86c.png\",\n                \"quote_rate\": 34.887825,\n                \"rank\": 20,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Wrapped BTC\",\n                \"contract_ticker_symbol\": \"WBTC\",\n                \"contract_address\": \"0x2260fac5e5542a773aa44fbcfedf7c193bc2c599\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x2260fac5e5542a773aa44fbcfedf7c193bc2c599.png\",\n                \"quote_rate\": 50868.375,\n                \"rank\": 22,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Binance USD\",\n                \"contract_ticker_symbol\": \"BUSD\",\n                \"contract_address\": \"0x4fabb145d64652a948d72533023f6e7a623c7c53\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x4fabb145d64652a948d72533023f6e7a623c7c53.png\",\n                \"quote_rate\": 1.0060817,\n                \"rank\": 24,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Aave Token\",\n                \"contract_ticker_symbol\": \"AAVE\",\n                \"contract_address\": \"0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9.png\",\n                \"quote_rate\": 557.27277,\n                \"rank\": 26,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Matic Token\",\n                \"contract_ticker_symbol\": \"MATIC\",\n                \"contract_address\": \"0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0.png\",\n                \"quote_rate\": 1.1492999,\n                \"rank\": 28,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"HuobiToken\",\n                \"contract_ticker_symbol\": \"HT\",\n                \"contract_address\": \"0x6f259637dcd74c767781e37bc6133cd6a68aa161\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x6f259637dcd74c767781e37bc6133cd6a68aa161.png\",\n                \"quote_rate\": 34.821297,\n                \"rank\": 29,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Compound Ether\",\n                \"contract_ticker_symbol\": \"cETH\",\n                \"contract_address\": \"0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5.png\",\n                \"quote_rate\": 77.776566,\n                \"rank\": 31,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"FirstBlood Token\",\n                \"contract_ticker_symbol\": \"1ST\",\n                \"contract_address\": \"0xaf30d2a7e90d7dc361c8c4585e9bb7d2f6f15bc7\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xaf30d2a7e90d7dc361c8c4585e9bb7d2f6f15bc7.png\",\n                \"quote_rate\": 26.19926,\n                \"rank\": 32,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"FTT\",\n                \"contract_ticker_symbol\": \"FTX Token\",\n                \"contract_address\": \"0x50d1c9771902476076ecfc8b2a83ad6b9355a4c9\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x50d1c9771902476076ecfc8b2a83ad6b9355a4c9.png\",\n                \"quote_rate\": 57.596527,\n                \"rank\": 38,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Compound Dai\",\n                \"contract_ticker_symbol\": \"cDAI\",\n                \"contract_address\": \"0x5d3a536e4d6dbd6114cc1ead35777bab948e3643\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x5d3a536e4d6dbd6114cc1ead35777bab948e3643.png\",\n                \"quote_rate\": 0.021518264,\n                \"rank\": 40,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Dai Stablecoin\",\n                \"contract_ticker_symbol\": \"DAI\",\n                \"contract_address\": \"0x6b175474e89094c44da98b954eedeac495271d0f\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x6b175474e89094c44da98b954eedeac495271d0f.png\",\n                \"quote_rate\": 1.0076053,\n                \"rank\": 42,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Avalanche\",\n                \"contract_ticker_symbol\": \"AVAX\",\n                \"contract_address\": \"0x9debca6ea3af87bf422cea9ac955618ceb56efb4\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x9debca6ea3af87bf422cea9ac955618ceb56efb4.png\",\n                \"quote_rate\": 35.329163,\n                \"rank\": 43,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Maker Token\",\n                \"contract_ticker_symbol\": \"MKR\",\n                \"contract_address\": \"0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2.png\",\n                \"quote_rate\": 4873.037,\n                \"rank\": 44,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Compound USD Coin\",\n                \"contract_ticker_symbol\": \"cUSDC\",\n                \"contract_address\": \"0x39aa39c021dfbae8fac545936693ac917d5e7563\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x39aa39c021dfbae8fac545936693ac917d5e7563.png\",\n                \"quote_rate\": 0.022081995,\n                \"rank\": 45,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"CRO\",\n                \"contract_ticker_symbol\": \"CRO\",\n                \"contract_address\": \"0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b.png\",\n                \"quote_rate\": 0.162517,\n                \"rank\": 48,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Compound\",\n                \"contract_ticker_symbol\": \"COMP\",\n                \"contract_address\": \"0xc00e94cb662c3520282e6f5717214004a7f26888\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xc00e94cb662c3520282e6f5717214004a7f26888.png\",\n                \"quote_rate\": 791.64105,\n                \"rank\": 50,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Bitfinex LEO Token\",\n                \"contract_ticker_symbol\": \"LEO\",\n                \"contract_address\": \"0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3.png\",\n                \"quote_rate\": 3.4997017,\n                \"rank\": 53,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Synthetix Network Token\",\n                \"contract_ticker_symbol\": \"SNX\",\n                \"contract_address\": \"0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f.png\",\n                \"quote_rate\": 21.004812,\n                \"rank\": 55,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 4,\n                \"contract_name\": \"Celsius\",\n                \"contract_ticker_symbol\": \"CEL\",\n                \"contract_address\": \"0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d.png\",\n                \"quote_rate\": 7.159889,\n                \"rank\": 58,\n                \"decimalsDivisor\": \"10000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"SushiToken\",\n                \"contract_ticker_symbol\": \"SUSHI\",\n                \"contract_address\": \"0x6b3595068778dd592e39a122f4f5a5cf09c90fe2\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x6b3595068778dd592e39a122f4f5a5cf09c90fe2.png\",\n                \"quote_rate\": 15.74688,\n                \"rank\": 59,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"yearn.finance\",\n                \"contract_ticker_symbol\": \"YFI\",\n                \"contract_address\": \"0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e.png\",\n                \"quote_rate\": 71415.45,\n                \"rank\": 61,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"chiliZ\",\n                \"contract_ticker_symbol\": \"CHZ\",\n                \"contract_address\": \"0x3506424f91fd33084466f402d5d97f05f8e3b4af\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x3506424f91fd33084466f402d5d97f05f8e3b4af.png\",\n                \"quote_rate\": 0.43524083,\n                \"rank\": 63,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 2,\n                \"contract_name\": \"Telcoin\",\n                \"contract_ticker_symbol\": \"TEL\",\n                \"contract_address\": \"0x467bccd9d29f223bce8043b84e8c8b282827790f\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x467bccd9d29f223bce8043b84e8c8b282827790f.png\",\n                \"quote_rate\": 0.042452484,\n                \"rank\": 64,\n                \"decimalsDivisor\": \"100\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Amp\",\n                \"contract_ticker_symbol\": \"AMP\",\n                \"contract_address\": \"0xff20817765cb7f73d4bde2e66e067e58d11095c2\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xff20817765cb7f73d4bde2e66e067e58d11095c2.png\",\n                \"quote_rate\": 0.06348319,\n                \"rank\": 65,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Nexo\",\n                \"contract_ticker_symbol\": \"NEXO\",\n                \"contract_address\": \"0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206.png\",\n                \"quote_rate\": 3.7033558,\n                \"rank\": 69,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"HoloToken\",\n                \"contract_ticker_symbol\": \"HOT\",\n                \"contract_address\": \"0x6c6ee5e31d828de241282b9606c8e98ea48526e2\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x6c6ee5e31d828de241282b9606c8e98ea48526e2.png\",\n                \"quote_rate\": 0.011706302,\n                \"rank\": 70,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Enjin Coin\",\n                \"contract_ticker_symbol\": \"ENJ\",\n                \"contract_address\": \"0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c.png\",\n                \"quote_rate\": 2.138622,\n                \"rank\": 71,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Basic Attention Token\",\n                \"contract_ticker_symbol\": \"BAT\",\n                \"contract_address\": \"0x0d8775f648430679a709e98d2b0cb6250d2887ef\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x0d8775f648430679a709e98d2b0cb6250d2887ef.png\",\n                \"quote_rate\": 1.2325898,\n                \"rank\": 73,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"GateChainToken\",\n                \"contract_ticker_symbol\": \"GT\",\n                \"contract_address\": \"0xe66747a101bff2dba3697199dcce5b743b454759\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xe66747a101bff2dba3697199dcce5b743b454759.png\",\n                \"quote_rate\": 10.74542,\n                \"rank\": 76,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Decentraland MANA\",\n                \"contract_ticker_symbol\": \"MANA\",\n                \"contract_address\": \"0x0f5d2fb29fb7d3cfee444a200298f468908cc942\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x0f5d2fb29fb7d3cfee444a200298f468908cc942.png\",\n                \"quote_rate\": 1.2859156,\n                \"rank\": 79,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Fantom Token\",\n                \"contract_ticker_symbol\": \"FTM\",\n                \"contract_address\": \"0x4e15361fd6b4bb609fa63c81a2be19d873717870\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x4e15361fd6b4bb609fa63c81a2be19d873717870.png\",\n                \"quote_rate\": 0.67139834,\n                \"rank\": 80,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Graph Token\",\n                \"contract_ticker_symbol\": \"GRT\",\n                \"contract_address\": \"0xc944e90c64b2c07662a292be6244bdf05cda44a7\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xc944e90c64b2c07662a292be6244bdf05cda44a7.png\",\n                \"quote_rate\": 1.3377179,\n                \"rank\": 82,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"UMA Voting Token v1\",\n                \"contract_ticker_symbol\": \"UMA\",\n                \"contract_address\": \"0x04fa0d235c4abf4bcf4787af4cf447de572ef828\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x04fa0d235c4abf4bcf4787af4cf447de572ef828.png\",\n                \"quote_rate\": 26.453194,\n                \"rank\": 83,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Chimpion\",\n                \"contract_ticker_symbol\": \"BNANA\",\n                \"contract_address\": \"0x07ef9e82721ac16809d24dafbe1792ce01654db4\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x07ef9e82721ac16809d24dafbe1792ce01654db4.png\",\n                \"quote_rate\": 4.0933967,\n                \"rank\": 84,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"LUSD Stablecoin\",\n                \"contract_ticker_symbol\": \"LUSD\",\n                \"contract_address\": \"0x5f98805a4e8be255a32880fdec7f6728c6568ba0\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x5f98805a4e8be255a32880fdec7f6728c6568ba0.png\",\n                \"quote_rate\": 1.0055739,\n                \"rank\": 85,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Bancor Network Token\",\n                \"contract_ticker_symbol\": \"BNT\",\n                \"contract_address\": \"0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c.png\",\n                \"quote_rate\": 7.4265184,\n                \"rank\": 87,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"0x Protocol Token\",\n                \"contract_ticker_symbol\": \"ZRX\",\n                \"contract_address\": \"0xe41d2489571d322189246dafa5ebde1f4699f498\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xe41d2489571d322189246dafa5ebde1f4699f498.png\",\n                \"quote_rate\": 1.6998262,\n                \"rank\": 88,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"OMGToken\",\n                \"contract_ticker_symbol\": \"OMG\",\n                \"contract_address\": \"0xd26114cd6ee289accf82350c8d8487fedb8a0c07\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xd26114cd6ee289accf82350c8d8487fedb8a0c07.png\",\n                \"quote_rate\": 10.19083,\n                \"rank\": 89,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Huobi BTC\",\n                \"contract_ticker_symbol\": \"HBTC\",\n                \"contract_address\": \"0x0316eb71485b0ab14103307bf65a021042c6d380\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x0316eb71485b0ab14103307bf65a021042c6d380.png\",\n                \"quote_rate\": 50792.805,\n                \"rank\": 90,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Curve DAO Token\",\n                \"contract_ticker_symbol\": \"CRV\",\n                \"contract_address\": \"0xd533a949740bb3306d119cc777fa900ba034cd52\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xd533a949740bb3306d119cc777fa900ba034cd52.png\",\n                \"quote_rate\": 3.8100076,\n                \"rank\": 92,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Liquid staked Ether 2.0\",\n                \"contract_ticker_symbol\": \"stETH\",\n                \"contract_address\": \"0xae7ab96520de3a18e5e111b5eaab095312d7fe84\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xae7ab96520de3a18e5e111b5eaab095312d7fe84.png\",\n                \"quote_rate\": 3839.4207,\n                \"rank\": 94,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"TrueUSD\",\n                \"contract_ticker_symbol\": \"TUSD\",\n                \"contract_address\": \"0x0000000000085d4780b73119b644ae5ecd22b376\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x0000000000085d4780b73119b644ae5ecd22b376.png\",\n                \"quote_rate\": 1.0045581,\n                \"rank\": 98,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Paxos Standard\",\n                \"contract_ticker_symbol\": \"PAX\",\n                \"contract_address\": \"0x8e870d67f660d95d5be530380d0ec0bd388289e1\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x8e870d67f660d95d5be530380d0ec0bd388289e1.png\",\n                \"quote_rate\": 1.0030345,\n                \"rank\": 99,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"SwissBorg Token\",\n                \"contract_ticker_symbol\": \"CHSB\",\n                \"contract_address\": \"0xba9d4199fab4f26efe3551d490e3821486f135ba\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xba9d4199fab4f26efe3551d490e3821486f135ba.png\",\n                \"quote_rate\": 1.1233987,\n                \"rank\": 103,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"NXM\",\n                \"contract_ticker_symbol\": \"NXM\",\n                \"contract_address\": \"0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b.png\",\n                \"quote_rate\": 148.47906,\n                \"rank\": 105,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"SushiBar\",\n                \"contract_ticker_symbol\": \"xSUSHI\",\n                \"contract_address\": \"0x8798249c2e607446efb7ad49ec89dd1865ff4272\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x8798249c2e607446efb7ad49ec89dd1865ff4272.png\",\n                \"quote_rate\": 18.03329,\n                \"rank\": 106,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Ankr Network\",\n                \"contract_ticker_symbol\": \"ANKR\",\n                \"contract_address\": \"0x8290333cef9e6d528dd5618fb97a76f268f3edd4\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x8290333cef9e6d528dd5618fb97a76f268f3edd4.png\",\n                \"quote_rate\": 0.1447417,\n                \"rank\": 107,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Fei USD\",\n                \"contract_ticker_symbol\": \"FEI\",\n                \"contract_address\": \"0x956f47f50a910163d8bf957cf5846d573e7f87ca\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x956f47f50a910163d8bf957cf5846d573e7f87ca.png\",\n                \"quote_rate\": 0.9883064,\n                \"rank\": 108,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"1INCH Token\",\n                \"contract_ticker_symbol\": \"1INCH\",\n                \"contract_address\": \"0x111111111117dc0aa78b770fa6a738034120c302\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x111111111117dc0aa78b770fa6a738034120c302.png\",\n                \"quote_rate\": 5.661686,\n                \"rank\": 111,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"CY Finance\",\n                \"contract_ticker_symbol\": \"CYF\",\n                \"contract_address\": \"0xdb33d49b5a41a97d296b7242a96ebd8ac77b3bb8\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdb33d49b5a41a97d296b7242a96ebd8ac77b3bb8.png\",\n                \"quote_rate\": 0.000010157311,\n                \"rank\": 111,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Reserve Rights\",\n                \"contract_ticker_symbol\": \"RSR\",\n                \"contract_address\": \"0x8762db106b2c2a0bccb3a80d1ed41273552616e8\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x8762db106b2c2a0bccb3a80d1ed41273552616e8.png\",\n                \"quote_rate\": 0.07160905,\n                \"rank\": 112,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 6,\n                \"contract_name\": \"Kucoin Shares\",\n                \"contract_ticker_symbol\": \"KCS\",\n                \"contract_address\": \"0x039b5649a59967e3e936d7471f9c3700100ee1ab\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x039b5649a59967e3e936d7471f9c3700100ee1ab.png\",\n                \"quote_rate\": 11.569179,\n                \"rank\": 114,\n                \"decimalsDivisor\": \"1000000\"\n            },\n            {\n                \"contract_decimals\": 9,\n                \"contract_name\": \"FEGtoken\",\n                \"contract_ticker_symbol\": \"FEG\",\n                \"contract_address\": \"0x389999216860ab8e0175387a0c90e5c52522c945\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x389999216860ab8e0175387a0c90e5c52522c945.png\",\n                \"quote_rate\": 0,\n                \"rank\": 115,\n                \"decimalsDivisor\": \"1000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Voyager\",\n                \"contract_ticker_symbol\": \"VGX\",\n                \"contract_address\": \"0x5af2be193a6abca9c8817001f45744777db30756\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x5af2be193a6abca9c8817001f45744777db30756.png\",\n                \"quote_rate\": 3.8638415,\n                \"rank\": 118,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Livepeer Token\",\n                \"contract_ticker_symbol\": \"LPT\",\n                \"contract_address\": \"0x58b6a8a3302369daec383334672404ee733ab239\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x58b6a8a3302369daec383334672404ee733ab239.png\",\n                \"quote_rate\": 35.38401,\n                \"rank\": 120,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"LoopringCoin V2\",\n                \"contract_ticker_symbol\": \"LRC\",\n                \"contract_address\": \"0xbbbbca6a901c926f240b89eacb641d8aec7aeafd\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xbbbbca6a901c926f240b89eacb641d8aec7aeafd.png\",\n                \"quote_rate\": 0.65362304,\n                \"rank\": 121,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"HUSD\",\n                \"contract_ticker_symbol\": \"HUSD\",\n                \"contract_address\": \"0xdf574c24545e5ffecb9a659c229253d4111d87e1\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdf574c24545e5ffecb9a659c229253d4111d87e1.png\",\n                \"quote_rate\": 0.99744797,\n                \"rank\": 122,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Republic Token\",\n                \"contract_ticker_symbol\": \"REN\",\n                \"contract_address\": \"0x408e41876cccdc0f92210600ef50372656052a38\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x408e41876cccdc0f92210600ef50372656052a38.png\",\n                \"quote_rate\": 0.8461041,\n                \"rank\": 125,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Quant\",\n                \"contract_ticker_symbol\": \"QNT\",\n                \"contract_address\": \"0x4a220e6096b25eadb88358cb44068a3248254675\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x4a220e6096b25eadb88358cb44068a3248254675.png\",\n                \"quote_rate\": 54.793617,\n                \"rank\": 127,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 9,\n                \"contract_name\": \"HuskyToken\",\n                \"contract_ticker_symbol\": \"HUSKY\",\n                \"contract_address\": \"0xd5281bb2d1ee94866b03a0fccdd4e900c8cb5091\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xd5281bb2d1ee94866b03a0fccdd4e900c8cb5091.png\",\n                \"quote_rate\": 0,\n                \"rank\": 128,\n                \"decimalsDivisor\": \"1000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Balancer\",\n                \"contract_ticker_symbol\": \"BAL\",\n                \"contract_address\": \"0xba100000625a3754423978a60c9317c58a424e3d\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xba100000625a3754423978a60c9317c58a424e3d.png\",\n                \"quote_rate\": 63.491325,\n                \"rank\": 129,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Tribe\",\n                \"contract_ticker_symbol\": \"TRIBE\",\n                \"contract_address\": \"0xc7283b66eb1eb5fb86327f08e1b5816b0720212b\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xc7283b66eb1eb5fb86327f08e1b5816b0720212b.png\",\n                \"quote_rate\": 1.6282171,\n                \"rank\": 132,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Status Network Token\",\n                \"contract_ticker_symbol\": \"SNT\",\n                \"contract_address\": \"0x744d70fdbe2ba4cf95131626614a1763df805b9e\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x744d70fdbe2ba4cf95131626614a1763df805b9e.png\",\n                \"quote_rate\": 0.17013498,\n                \"rank\": 134,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Compound USDT\",\n                \"contract_ticker_symbol\": \"cUSDT\",\n                \"contract_address\": \"0xf650c3d88d12db855b8bf7d11be6c55a4e07dcc9\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xf650c3d88d12db855b8bf7d11be6c55a4e07dcc9.png\",\n                \"quote_rate\": 0.021345591,\n                \"rank\": 135,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"DENT\",\n                \"contract_ticker_symbol\": \"DENT\",\n                \"contract_address\": \"0x3597bfd533a99c9aa083587b074434e61eb0a258\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x3597bfd533a99c9aa083587b074434e61eb0a258.png\",\n                \"quote_rate\": 0.0067800055,\n                \"rank\": 136,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Pundi X Token\",\n                \"contract_ticker_symbol\": \"PUNDIX\",\n                \"contract_address\": \"0x0fd10b9899882a6f2fcb5c371e17e70fdee00c38\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x0fd10b9899882a6f2fcb5c371e17e70fdee00c38.png\",\n                \"quote_rate\": 2.4448647,\n                \"rank\": 137,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Pundi X Token\",\n                \"contract_ticker_symbol\": \"NPXS\",\n                \"contract_address\": \"0xa15c7ebe1f07caf6bff097d8a589fb8ac49ae5b3\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xa15c7ebe1f07caf6bff097d8a589fb8ac49ae5b3.png\",\n                \"quote_rate\": 0.0026155077,\n                \"rank\": 138,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"renBTC\",\n                \"contract_ticker_symbol\": \"renBTC\",\n                \"contract_address\": \"0xeb4c2781e4eba804ce9a9803c67d0893436bb27d\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xeb4c2781e4eba804ce9a9803c67d0893436bb27d.png\",\n                \"quote_rate\": 50521.12,\n                \"rank\": 139,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"BitMax token\",\n                \"contract_ticker_symbol\": \"BTMX\",\n                \"contract_address\": \"0xcca0c9c383076649604ee31b20248bc04fdf61ca\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xcca0c9c383076649604ee31b20248bc04fdf61ca.png\",\n                \"quote_rate\": 0.7572276,\n                \"rank\": 140,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 6,\n                \"contract_name\": \"Oxygen Ecosystem Token\",\n                \"contract_ticker_symbol\": \"OXY\",\n                \"contract_address\": \"0x965697b4ef02f0de01384d0d4f9f782b1670c163\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x965697b4ef02f0de01384d0d4f9f782b1670c163.png\",\n                \"quote_rate\": 2.7373955,\n                \"rank\": 141,\n                \"decimalsDivisor\": \"1000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Wise Token\",\n                \"contract_ticker_symbol\": \"WISE\",\n                \"contract_address\": \"0x66a0f676479cee1d7373f3dc2e2952778bff5bd6\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x66a0f676479cee1d7373f3dc2e2952778bff5bd6.png\",\n                \"quote_rate\": 0.7734793,\n                \"rank\": 141,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 9,\n                \"contract_name\": \"iEx.ec Network Token\",\n                \"contract_ticker_symbol\": \"RLC\",\n                \"contract_address\": \"0x607f4c5bb672230e8672085532f7e901544a7375\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x607f4c5bb672230e8672085532f7e901544a7375.png\",\n                \"quote_rate\": 7.6459165,\n                \"rank\": 142,\n                \"decimalsDivisor\": \"1000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Ocean Token\",\n                \"contract_ticker_symbol\": \"OCEAN\",\n                \"contract_address\": \"0x967da4048cd07ab37855c090aaf366e4ce1b9f48\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x967da4048cd07ab37855c090aaf366e4ce1b9f48.png\",\n                \"quote_rate\": 1.2534122,\n                \"rank\": 143,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Reef.finance\",\n                \"contract_ticker_symbol\": \"REEF\",\n                \"contract_address\": \"0xfe3e6a25e6b192a42a44ecddcd13796471735acf\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xfe3e6a25e6b192a42a44ecddcd13796471735acf.png\",\n                \"quote_rate\": 0.04212237,\n                \"rank\": 144,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Wrapped MIR Token\",\n                \"contract_ticker_symbol\": \"MIR\",\n                \"contract_address\": \"0x09a3ecafa817268f77be1283176b946c4ff2e608\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x09a3ecafa817268f77be1283176b946c4ff2e608.png\",\n                \"quote_rate\": 8.177651,\n                \"rank\": 145,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Shabu Shabu\",\n                \"contract_ticker_symbol\": \"KOBE\",\n                \"contract_address\": \"0xcb4e8cafeda995da5cedfda5205bd5664a12b848\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xcb4e8cafeda995da5cedfda5205bd5664a12b848.png\",\n                \"quote_rate\": 12.927718,\n                \"rank\": 146,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Wootrade Network\",\n                \"contract_ticker_symbol\": \"WOO\",\n                \"contract_address\": \"0x4691937a7508860f876c9c0a2a617e7d9e945d4b\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x4691937a7508860f876c9c0a2a617e7d9e945d4b.png\",\n                \"quote_rate\": 1.1614885,\n                \"rank\": 147,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"BandToken\",\n                \"contract_ticker_symbol\": \"BAND\",\n                \"contract_address\": \"0xba11d00c5f74255f56a5e366f4f77f5a186d7f55\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xba11d00c5f74255f56a5e366f4f77f5a186d7f55.png\",\n                \"quote_rate\": 15.303005,\n                \"rank\": 149,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 4,\n                \"contract_name\": \"Alien Worlds Trilium\",\n                \"contract_ticker_symbol\": \"TLM\",\n                \"contract_address\": \"0x888888848b652b3e3a0f34c96e00eec0f3a23f72\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x888888848b652b3e3a0f34c96e00eec0f3a23f72.png\",\n                \"quote_rate\": 0.4057846,\n                \"rank\": 150,\n                \"decimalsDivisor\": \"10000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Injective Token\",\n                \"contract_ticker_symbol\": \"INJ\",\n                \"contract_address\": \"0xe28b3b32b6c345a34ff64674606124dd5aceca30\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xe28b3b32b6c345a34ff64674606124dd5aceca30.png\",\n                \"quote_rate\": 19.897665,\n                \"rank\": 153,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"TitanSwap\",\n                \"contract_ticker_symbol\": \"Titan\",\n                \"contract_address\": \"0x3a8cccb969a61532d1e6005e2ce12c200caece87\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x3a8cccb969a61532d1e6005e2ce12c200caece87.png\",\n                \"quote_rate\": 4.6307187,\n                \"rank\": 154,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Bounce Token\",\n                \"contract_ticker_symbol\": \"BOT\",\n                \"contract_address\": \"0x5beabaebb3146685dd74176f68a0721f91297d37\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x5beabaebb3146685dd74176f68a0721f91297d37.png\",\n                \"quote_rate\": 12417.769,\n                \"rank\": 156,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Lido DAO Token\",\n                \"contract_ticker_symbol\": \"LDO\",\n                \"contract_address\": \"0x5a98fcbea516cf06857215779fd812ca3bef1b32\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x5a98fcbea516cf06857215779fd812ca3bef1b32.png\",\n                \"quote_rate\": 3.8100076,\n                \"rank\": 157,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 6,\n                \"contract_name\": \"Serum\",\n                \"contract_ticker_symbol\": \"SRM\",\n                \"contract_address\": \"0x476c5e26a75bd202a9683ffd34359c0cc15be0ff\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x476c5e26a75bd202a9683ffd34359c0cc15be0ff.png\",\n                \"quote_rate\": 8.576326,\n                \"rank\": 159,\n                \"decimalsDivisor\": \"1000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Token Prometeus Network\",\n                \"contract_ticker_symbol\": \"PROM\",\n                \"contract_address\": \"0xfc82bb4ba86045af6f327323a46e80412b91b27d\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xfc82bb4ba86045af6f327323a46e80412b91b27d.png\",\n                \"quote_rate\": 26.12816,\n                \"rank\": 160,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Kyber Network Crystal\",\n                \"contract_ticker_symbol\": \"KNC\",\n                \"contract_address\": \"0xdd974d5c2e2928dea5f71b9825b8b646686bd200\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xdd974d5c2e2928dea5f71b9825b8b646686bd200.png\",\n                \"quote_rate\": 3.0705552,\n                \"rank\": 161,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Golem Network Token\",\n                \"contract_ticker_symbol\": \"GLM\",\n                \"contract_address\": \"0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429.png\",\n                \"quote_rate\": 0.4113711,\n                \"rank\": 162,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 9,\n                \"contract_name\": \"Ampleforth\",\n                \"contract_ticker_symbol\": \"AMPL\",\n                \"contract_address\": \"0xd46ba6d942050d489dbd938a2c909a5d5039a161\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xd46ba6d942050d489dbd938a2c909a5d5039a161.png\",\n                \"quote_rate\": 0.94920075,\n                \"rank\": 163,\n                \"decimalsDivisor\": \"1000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Axie Infinity Shard\",\n                \"contract_ticker_symbol\": \"AXS\",\n                \"contract_address\": \"0xf5d669627376ebd411e34b98f19c868c8aba5ada\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xf5d669627376ebd411e34b98f19c868c8aba5ada.png\",\n                \"quote_rate\": 7.2751746,\n                \"rank\": 164,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Tokamak Network Token\",\n                \"contract_ticker_symbol\": \"TON\",\n                \"contract_address\": \"0x2be5e8c109e2197d077d13a82daead6a9b3433c5\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x2be5e8c109e2197d077d13a82daead6a9b3433c5.png\",\n                \"quote_rate\": 10.715964,\n                \"rank\": 165,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Synth sETH\",\n                \"contract_ticker_symbol\": \"sETH\",\n                \"contract_address\": \"0x5e74c9036fb86bd7ecdcb084a0673efc32ea31cb\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x5e74c9036fb86bd7ecdcb084a0673efc32ea31cb.png\",\n                \"quote_rate\": 3977.9065,\n                \"rank\": 166,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Gnosis Token\",\n                \"contract_ticker_symbol\": \"GNO\",\n                \"contract_address\": \"0x6810e776880c02933d47db1b9fc05908e5386b96\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x6810e776880c02933d47db1b9fc05908e5386b96.png\",\n                \"quote_rate\": 255.86572,\n                \"rank\": 168,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 8,\n                \"contract_name\": \"Compound Uniswap\",\n                \"contract_ticker_symbol\": \"cUNI\",\n                \"contract_address\": \"0x35a18000230da775cac24873d00ff85bccded550\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x35a18000230da775cac24873d00ff85bccded550.png\",\n                \"quote_rate\": 0.7851602,\n                \"rank\": 169,\n                \"decimalsDivisor\": \"100000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Rocket Pool\",\n                \"contract_ticker_symbol\": \"RPL\",\n                \"contract_address\": \"0xb4efd85c19999d84251304bda99e90b92300bd93\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xb4efd85c19999d84251304bda99e90b92300bd93.png\",\n                \"quote_rate\": 22.000738,\n                \"rank\": 170,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            },\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"DODO bird\",\n                \"contract_ticker_symbol\": \"DODO\",\n                \"contract_address\": \"0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd.png\",\n                \"quote_rate\": 3.0583665,\n                \"rank\": 171,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            }\n        ],\n        \"pagination\": {\n            \"has_more\": true,\n            \"page_number\": 0,\n            \"page_size\": 100,\n            \"total_count\": 4814\n        }\n    },\n    \"error\": false,\n    \"error_message\": null,\n    \"error_code\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get price volatility",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/pricing/volatility/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pricing",
+								"volatility",
+								""
+							],
+							"query": [
+								{
+									"key": "tickers",
+									"value": null,
+									"description": "If tickers (a comma separated list of tickers is present), only return the spot prices for these tokens.",
+									"disabled": true
+								},
+								{
+									"key": "page-number",
+									"value": null,
+									"description": "The specific page to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "page-size",
+									"value": null,
+									"description": "The number of results per page.",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"description": "If format=csv, return a flat CSV instead of JSON responses.",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get price volatility and metadata for a select group of tickers. Without the tickers query param, it defaults to ETH volatility."
+					},
+					"response": [
+						{
+							"name": "Get price volatility",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/pricing/volatility/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"pricing",
+										"volatility",
+										""
+									],
+									"query": [
+										{
+											"key": "tickers",
+											"value": null,
+											"description": "If tickers (a comma separated list of tickers is present), only return the spot prices for these tokens.",
+											"disabled": true
+										},
+										{
+											"key": "page-number",
+											"value": null,
+											"description": "The specific page to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "page-size",
+											"value": null,
+											"description": "The number of results per page.",
+											"disabled": true
+										},
+										{
+											"key": "format",
+											"value": null,
+											"description": "If format=csv, return a flat CSV instead of JSON responses.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 13 May 2021 14:27:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Server",
+									"value": "Scout/v20210512185305 (built on 2021-05-13T01:53:05Z)"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updated_at\": \"2021-05-13T14:27:13.793553904Z\",\n        \"items\": [\n            {\n                \"contract_decimals\": 18,\n                \"contract_name\": \"Wrapped Ether\",\n                \"contract_ticker_symbol\": \"WETH\",\n                \"contract_address\": \"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\",\n                \"supports_erc\": null,\n                \"logo_url\": \"https://logos.covalenthq.com/tokens/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2.png\",\n                \"stddev_1h\": 6.245521,\n                \"stddev_2h\": 24.161053,\n                \"stddev_4h\": 40.71026,\n                \"stddev_8h\": 62.233406,\n                \"stddev_16h\": 71.241,\n                \"stddev_24h\": 79.95965,\n                \"quote_rate\": 3912.9727,\n                \"decimalsDivisor\": \"1000000000000000000\"\n            }\n        ],\n        \"pagination\": {\n            \"has_more\": false,\n            \"page_number\": 0,\n            \"page_size\": 100,\n            \"total_count\": 1\n        }\n    },\n    \"error\": false,\n    \"error_message\": null,\n    \"error_code\": null\n}"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "V1",
@@ -3426,6 +4337,18 @@
 		{
 			"key": "tx_hash",
 			"value": "{{tx_hash}}"
+		},
+		{
+			"key": "quote_currency",
+			"value": "{{quote_currency}}"
+		},
+		{
+			"key": "contract_addresses",
+			"value": "{{contract_addresses}}"
+		},
+		{
+			"key": "ticker_symbol",
+			"value": "{{ticker_symbol}}"
 		}
 	]
 }
