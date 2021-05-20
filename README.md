@@ -2,6 +2,8 @@
 
 Postman collection for [Covalent](https://www.covalenthq.com/docs/api/).
 
+Last check : 2021/05/20
+
 ## Installation
 
 1. Download [Postman](https://postman.com)
