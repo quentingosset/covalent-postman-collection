@@ -2,7 +2,7 @@
 
 Postman collection for [Covalent](https://www.covalenthq.com/docs/api/).
 
-Last check : 2021/05/20
+Last check : 2021/07/01
 
 ## Installation
 
